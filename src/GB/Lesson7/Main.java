@@ -18,15 +18,17 @@ public class Main {
         Plate plate = new Plate(60);
 
         var hungryCats = cats.length;
-        while (hungryCats > 0) {
 
+        while (hungryCats > 0) {
             for (Cat cat : cats) {
-                cat.eat(plate);
-                hungryCats -= cat.isSatiety() ? 1 : 0;
+                if (!cat.isSatiety()) {
+                    cat.eat(plate);
+                    hungryCats -= cat.isSatiety() ? 1 : 0;
+                }
             }
             if (hungryCats > 0) plate.increaseFood(50);
         }
-        System.out.println("Все котики сыты");
+        System.out.println("---------------\nВсе котики сыты");
 
 
         //Animal dog = new Dog("Бобик");
@@ -43,3 +45,4 @@ public class Main {
     }
 
 }
+

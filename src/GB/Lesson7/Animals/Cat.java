@@ -30,7 +30,7 @@ public class Cat extends Animal {
             return;
         }
         if (this.satiety = plate.decreaseFood(this.appetite))
-            System.out.println(MessageFormat.format(getTemplate(), "Я поел!"));
+            System.out.println(MessageFormat.format(getTemplate(), "Я поел!")+"["+this.appetite+"]");
         else System.out.println(MessageFormat.format(getTemplate(), "Я не буду это есть, тут не хватает - доложи!"));
     }
 
